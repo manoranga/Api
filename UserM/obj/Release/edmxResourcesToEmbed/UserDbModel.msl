@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="thanujaModelStoreContainer" CdmEntityContainer="thanujaEntities">
+    <EntitySetMapping Name="CabBookings">
+      <EntityTypeMapping TypeName="thanujaModel.CabBooking">
+        <MappingFragment StoreEntitySet="CabBooking">
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="BeginigLocation" ColumnName="BeginigLocation" />
+          <ScalarProperty Name="EndLocation" ColumnName="EndLocation" />
+          <ScalarProperty Name="TouristId" ColumnName="TouristId" />
+          <ScalarProperty Name="CabId" ColumnName="CabId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CabDetails">
+      <EntityTypeMapping TypeName="thanujaModel.CabDetail">
+        <MappingFragment StoreEntitySet="CabDetails">
+          <ScalarProperty Name="CabServiceId" ColumnName="CabServiceId" />
+          <ScalarProperty Name="CabId" ColumnName="CabId" />
+          <ScalarProperty Name="CurrentLocation" ColumnName="CurrentLocation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CabRatings">
+      <EntityTypeMapping TypeName="thanujaModel.CabRating">
+        <MappingFragment StoreEntitySet="CabRating">
+          <ScalarProperty Name="TouristId" ColumnName="TouristId" />
+          <ScalarProperty Name="CabId" ColumnName="CabId" />
+          <ScalarProperty Name="RatingValue" ColumnName="RatingValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CabServices">
+      <EntityTypeMapping TypeName="thanujaModel.CabService">
+        <MappingFragment StoreEntitySet="CabService">
+          <ScalarProperty Name="CabServiceId" ColumnName="CabServiceId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chats">
+      <EntityTypeMapping TypeName="thanujaModel.Chat">
+        <MappingFragment StoreEntitySet="Chat">
+          <ScalarProperty Name="ChatId" ColumnName="ChatId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChatGroups">
+      <EntityTypeMapping TypeName="thanujaModel.ChatGroup">
+        <MappingFragment StoreEntitySet="ChatGroup">
+          <ScalarProperty Name="ChatGroupId" ColumnName="ChatGroupId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChatGroupings">
+      <EntityTypeMapping TypeName="thanujaModel.ChatGrouping">
+        <MappingFragment StoreEntitySet="ChatGrouping">
+          <ScalarProperty Name="ChatMemberId" ColumnName="ChatMemberId" />
+          <ScalarProperty Name="ChatGroupId" ColumnName="ChatGroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChatMembers">
+      <EntityTypeMapping TypeName="thanujaModel.ChatMember">
+        <MappingFragment StoreEntitySet="ChatMember">
+          <ScalarProperty Name="ChatMemberId" ColumnName="ChatMemberId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hotels">
+      <EntityTypeMapping TypeName="thanujaModel.Hotel">
+        <MappingFragment StoreEntitySet="Hotel">
+          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HotelRatings">
+      <EntityTypeMapping TypeName="thanujaModel.HotelRating">
+        <MappingFragment StoreEntitySet="HotelRating">
+          <ScalarProperty Name="TouristId" ColumnName="TouristId" />
+          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+          <ScalarProperty Name="RatingValue" ColumnName="RatingValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="thanujaModel.Payment">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="TouristId" ColumnName="TouristId" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Commision" ColumnName="Commision" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rooms">
+      <EntityTypeMapping TypeName="thanujaModel.Room">
+        <MappingFragment StoreEntitySet="Room">
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+          <ScalarProperty Name="RoomStatus" ColumnName="RoomStatus" />
+          <ScalarProperty Name="FloorNo" ColumnName="FloorNo" />
+          <ScalarProperty Name="ReservationId" ColumnName="ReservationId" />
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="RoomTypeId" ColumnName="RoomTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomBookings">
+      <EntityTypeMapping TypeName="thanujaModel.RoomBooking">
+        <MappingFragment StoreEntitySet="RoomBooking">
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="NoOfRooms" ColumnName="NoOfRooms" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomDetails">
+      <EntityTypeMapping TypeName="thanujaModel.RoomDetail">
+        <MappingFragment StoreEntitySet="RoomDetails">
+          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+          <ScalarProperty Name="RoomTypeId" ColumnName="RoomTypeId" />
+          <ScalarProperty Name="Availability" ColumnName="Availability" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomTypes">
+      <EntityTypeMapping TypeName="thanujaModel.RoomType">
+        <MappingFragment StoreEntitySet="RoomType">
+          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="RoomCharge" ColumnName="RoomCharge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TourGuides">
+      <EntityTypeMapping TypeName="thanujaModel.TourGuide">
+        <MappingFragment StoreEntitySet="TourGuide">
+          <ScalarProperty Name="GuideId" ColumnName="GuideId" />
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="ChatStatus" ColumnName="ChatStatus" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="ChargePerDay" ColumnName="ChargePerDay" />
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TourGuideBookings">
+      <EntityTypeMapping TypeName="thanujaModel.TourGuideBooking">
+        <MappingFragment StoreEntitySet="TourGuideBooking">
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
+          <ScalarProperty Name="TouristId" ColumnName="TouristId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TourGuideRatings">
+      <EntityTypeMapping TypeName="thanujaModel.TourGuideRating">
+        <MappingFragment StoreEntitySet="TourGuideRating">
+          <ScalarProperty Name="TouristId" ColumnName="TouristId" />
+          <ScalarProperty Name="TourGuideId" ColumnName="TourGuideId" />
+          <ScalarProperty Name="RatingValue" ColumnName="RatingValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tourists">
+      <EntityTypeMapping TypeName="thanujaModel.Tourist">
+        <MappingFragment StoreEntitySet="Tourist">
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="ChatStatus" ColumnName="ChatStatus" />
+          <ScalarProperty Name="TouristId" ColumnName="TouristId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookedBies">
+      <EntityTypeMapping TypeName="thanujaModel.BookedBy">
+        <MappingFragment StoreEntitySet="BookedBy">
+          <ScalarProperty Name="TouristId" ColumnName="TouristId" />
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChatWhoToWhoms">
+      <EntityTypeMapping TypeName="thanujaModel.ChatWhoToWhom">
+        <MappingFragment StoreEntitySet="ChatWhoToWhom">
+          <ScalarProperty Name="ChatId" ColumnName="ChatId" />
+          <ScalarProperty Name="SenderId" ColumnName="SenderId" />
+          <ScalarProperty Name="ReceiverId" ColumnName="ReceiverId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservations">
+      <EntityTypeMapping TypeName="thanujaModel.Reservation">
+        <MappingFragment StoreEntitySet="Reservations">
+          <ScalarProperty Name="ReservationId" ColumnName="ReservationId" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="TouristId" ColumnName="TouristId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reviews">
+      <EntityTypeMapping TypeName="thanujaModel.Review">
+        <MappingFragment StoreEntitySet="Reviews">
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

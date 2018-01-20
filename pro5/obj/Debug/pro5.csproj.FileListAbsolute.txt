@@ -1,0 +1,5 @@
+E:\API\pro5\bin\Debug\pro5.dll
+E:\API\pro5\bin\Debug\pro5.pdb
+E:\API\pro5\obj\Debug\pro5.csproj.CoreCompileInputs.cache
+E:\API\pro5\obj\Debug\pro5.dll
+E:\API\pro5\obj\Debug\pro5.pdb

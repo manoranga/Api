@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="thanujaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'thanuja.dbo.BookedBy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BookedBy">
+    <Key>
+      <PropertyRef Name="TouristId" />
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="TouristId" Type="int" Nullable="false" />
+    <Property Name="BookingId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CabBooking">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="BookingId" Type="int" Nullable="false" />
+    <Property Name="PaymentId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="BeginigLocation" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="EndLocation" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="TouristId" Type="int" Nullable="false" />
+    <Property Name="CabId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CabDetails">
+    <Key>
+      <PropertyRef Name="CabServiceId" />
+      <PropertyRef Name="CabId" />
+    </Key>
+    <Property Name="CabServiceId" Type="int" Nullable="false" />
+    <Property Name="CabId" Type="int" Nullable="false" />
+    <Property Name="CurrentLocation" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CabRating">
+    <Key>
+      <PropertyRef Name="TouristId" />
+      <PropertyRef Name="CabId" />
+    </Key>
+    <Property Name="TouristId" Type="int" Nullable="false" />
+    <Property Name="CabId" Type="int" Nullable="false" />
+    <Property Name="RatingValue" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CabService">
+    <Key>
+      <PropertyRef Name="CabServiceId" />
+    </Key>
+    <Property Name="CabServiceId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Chat">
+    <Key>
+      <PropertyRef Name="ChatId" />
+    </Key>
+    <Property Name="ChatId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChatGroup">
+    <Key>
+      <PropertyRef Name="ChatGroupId" />
+    </Key>
+    <Property Name="ChatGroupId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChatGrouping">
+    <Key>
+      <PropertyRef Name="ChatMemberId" />
+      <PropertyRef Name="ChatGroupId" />
+    </Key>
+    <Property Name="ChatMemberId" Type="int" Nullable="false" />
+    <Property Name="ChatGroupId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChatMember">
+    <Key>
+      <PropertyRef Name="ChatMemberId" />
+    </Key>
+    <Property Name="ChatMemberId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'thanuja.dbo.ChatWhoToWhom' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ChatWhoToWhom">
+    <Key>
+      <PropertyRef Name="SenderId" />
+      <PropertyRef Name="ReceiverId" />
+    </Key>
+    <Property Name="SenderId" Type="int" Nullable="false" />
+    <Property Name="ReceiverId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="HotelId" />
+    </Key>
+    <Property Name="HotelId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Rank" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HotelRating">
+    <Key>
+      <PropertyRef Name="TouristId" />
+      <PropertyRef Name="HotelId" />
+    </Key>
+    <Property Name="TouristId" Type="int" Nullable="false" />
+    <Property Name="HotelId" Type="int" Nullable="false" />
+    <Property Name="RatingValue" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payments">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="int" Nullable="false" />
+    <Property Name="TouristId" Type="int" Nullable="false" />
+    <Property Name="TotalAmount" Type="int" Nullable="false" />
+    <Property Name="Commision" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'thanuja.dbo.Reservations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Reservations">
+    <Key>
+      <PropertyRef Name="ReservationId" />
+      <PropertyRef Name="RoomId" />
+      <PropertyRef Name="HotelId" />
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="ReservationId" Type="int" Nullable="false" />
+    <Property Name="RoomId" Type="int" Nullable="false" />
+    <Property Name="HotelId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="TouristId" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'thanuja.dbo.Reviews' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Reviews">
+    <Key>
+      <PropertyRef Name="ReviewId" />
+      <PropertyRef Name="PaymentId" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="ReviewId" Type="int" Nullable="false" />
+    <Property Name="PaymentId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReviewTypes">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="ReviewType" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="TypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="RoomId" />
+      <PropertyRef Name="HotelId" />
+    </Key>
+    <Property Name="RoomId" Type="int" Nullable="false" />
+    <Property Name="HotelId" Type="int" Nullable="false" />
+    <Property Name="RoomStatus" Type="bit" Nullable="false" />
+    <Property Name="FloorNo" Type="int" Nullable="false" />
+    <Property Name="ReservationId" Type="int" Nullable="false" />
+    <Property Name="BookingId" Type="int" Nullable="false" />
+    <Property Name="RoomTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoomBooking">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="BookingId" Type="int" Nullable="false" />
+    <Property Name="RoomId" Type="int" Nullable="false" />
+    <Property Name="PaymentId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="NoOfRooms" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoomDetails">
+    <Key>
+      <PropertyRef Name="HotelId" />
+      <PropertyRef Name="RoomTypeId" />
+    </Key>
+    <Property Name="HotelId" Type="int" Nullable="false" />
+    <Property Name="RoomTypeId" Type="int" Nullable="false" />
+    <Property Name="Availability" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoomType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="HotelId" Type="int" Nullable="false" />
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="TypeName" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="RoomCharge" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TourGuide">
+    <Key>
+      <PropertyRef Name="GuideId" />
+    </Key>
+    <Property Name="GuideId" Type="int" Nullable="false" />
+    <Property Name="LoginDate" Type="date" Nullable="false" />
+    <Property Name="UserName" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Gender" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nationality" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChatStatus" Type="bit" Nullable="false" />
+    <Property Name="Rank" Type="int" Nullable="false" />
+    <Property Name="ChargePerDay" Type="int" Nullable="false" />
+    <Property Name="BookingId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TourGuideBooking">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="BookingId" Type="int" Nullable="false" />
+    <Property Name="PaymentId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="NoOfDays" Type="int" Nullable="false" />
+    <Property Name="TouristId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TourGuideRating">
+    <Key>
+      <PropertyRef Name="TouristId" />
+      <PropertyRef Name="TourGuideId" />
+    </Key>
+    <Property Name="TouristId" Type="int" Nullable="false" />
+    <Property Name="TourGuideId" Type="int" Nullable="false" />
+    <Property Name="RatingValue" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tourist">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="LoginDate" Type="date" Nullable="false" />
+    <Property Name="UserName" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Gender" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nationality" Type="nchar" MaxLength="200" Nullable="false" />
+    <Property Name="ChatStatus" Type="bit" Nullable="false" />
+    <Property Name="TouristId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Payments_Tourist">
+    <End Role="Tourist" Type="Self.Tourist" Multiplicity="1" />
+    <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tourist">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Payments">
+        <PropertyRef Name="TouristId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomBooking_Payments">
+    <End Role="Payments" Type="Self.Payments" Multiplicity="1" />
+    <End Role="RoomBooking" Type="Self.RoomBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payments">
+        <PropertyRef Name="PaymentId" />
+      </Principal>
+      <Dependent Role="RoomBooking">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomBooking_RoomBooking">
+    <End Role="RoomBooking" Type="Self.RoomBooking" Multiplicity="1" />
+    <End Role="RoomBooking1" Type="Self.RoomBooking" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RoomBooking">
+        <PropertyRef Name="BookingId" />
+      </Principal>
+      <Dependent Role="RoomBooking1">
+        <PropertyRef Name="BookingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomType_Hotel">
+    <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
+    <End Role="RoomType" Type="Self.RoomType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotel">
+        <PropertyRef Name="HotelId" />
+      </Principal>
+      <Dependent Role="RoomType">
+        <PropertyRef Name="HotelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TourGuide_TourGuide">
+    <End Role="TourGuide" Type="Self.TourGuide" Multiplicity="1" />
+    <End Role="TourGuide1" Type="Self.TourGuide" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TourGuide">
+        <PropertyRef Name="GuideId" />
+      </Principal>
+      <Dependent Role="TourGuide1">
+        <PropertyRef Name="GuideId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TourGuideBooking_Payments">
+    <End Role="Payments" Type="Self.Payments" Multiplicity="1" />
+    <End Role="TourGuideBooking" Type="Self.TourGuideBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payments">
+        <PropertyRef Name="PaymentId" />
+      </Principal>
+      <Dependent Role="TourGuideBooking">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TourGuideBooking_Tourist">
+    <End Role="Tourist" Type="Self.Tourist" Multiplicity="1" />
+    <End Role="TourGuideBooking" Type="Self.TourGuideBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tourist">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TourGuideBooking">
+        <PropertyRef Name="TouristId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="thanujaModelStoreContainer">
+    <EntitySet Name="CabBooking" EntityType="Self.CabBooking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CabDetails" EntityType="Self.CabDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CabRating" EntityType="Self.CabRating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CabService" EntityType="Self.CabService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chat" EntityType="Self.Chat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChatGroup" EntityType="Self.ChatGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChatGrouping" EntityType="Self.ChatGrouping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChatMember" EntityType="Self.ChatMember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hotel" EntityType="Self.Hotel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HotelRating" EntityType="Self.HotelRating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReviewTypes" EntityType="Self.ReviewTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomBooking" EntityType="Self.RoomBooking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomDetails" EntityType="Self.RoomDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomType" EntityType="Self.RoomType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TourGuide" EntityType="Self.TourGuide" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TourGuideBooking" EntityType="Self.TourGuideBooking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TourGuideRating" EntityType="Self.TourGuideRating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tourist" EntityType="Self.Tourist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookedBy" EntityType="Self.BookedBy" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BookedBy].[TouristId] AS [TouristId], 
+    [BookedBy].[BookingId] AS [BookingId]
+    FROM [dbo].[BookedBy] AS [BookedBy]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ChatWhoToWhom" EntityType="Self.ChatWhoToWhom" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ChatWhoToWhom].[SenderId] AS [SenderId], 
+    [ChatWhoToWhom].[ReceiverId] AS [ReceiverId]
+    FROM [dbo].[ChatWhoToWhom] AS [ChatWhoToWhom]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Reservations" EntityType="Self.Reservations" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Reservations].[ReservationId] AS [ReservationId], 
+    [Reservations].[RoomId] AS [RoomId], 
+    [Reservations].[HotelId] AS [HotelId], 
+    [Reservations].[Date] AS [Date], 
+    [Reservations].[TouristId] AS [TouristId]
+    FROM [dbo].[Reservations] AS [Reservations]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Reviews" EntityType="Self.Reviews" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Reviews].[ReviewId] AS [ReviewId], 
+    [Reviews].[PaymentId] AS [PaymentId], 
+    [Reviews].[Description] AS [Description]
+    FROM [dbo].[Reviews] AS [Reviews]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Payments_Tourist" Association="Self.FK_Payments_Tourist">
+      <End Role="Tourist" EntitySet="Tourist" />
+      <End Role="Payments" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomBooking_Payments" Association="Self.FK_RoomBooking_Payments">
+      <End Role="Payments" EntitySet="Payments" />
+      <End Role="RoomBooking" EntitySet="RoomBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomBooking_RoomBooking" Association="Self.FK_RoomBooking_RoomBooking">
+      <End Role="RoomBooking" EntitySet="RoomBooking" />
+      <End Role="RoomBooking1" EntitySet="RoomBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomType_Hotel" Association="Self.FK_RoomType_Hotel">
+      <End Role="Hotel" EntitySet="Hotel" />
+      <End Role="RoomType" EntitySet="RoomType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TourGuide_TourGuide" Association="Self.FK_TourGuide_TourGuide">
+      <End Role="TourGuide" EntitySet="TourGuide" />
+      <End Role="TourGuide1" EntitySet="TourGuide" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TourGuideBooking_Payments" Association="Self.FK_TourGuideBooking_Payments">
+      <End Role="Payments" EntitySet="Payments" />
+      <End Role="TourGuideBooking" EntitySet="TourGuideBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TourGuideBooking_Tourist" Association="Self.FK_TourGuideBooking_Tourist">
+      <End Role="Tourist" EntitySet="Tourist" />
+      <End Role="TourGuideBooking" EntitySet="TourGuideBooking" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

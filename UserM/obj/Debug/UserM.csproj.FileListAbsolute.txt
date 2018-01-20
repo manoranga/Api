@@ -1,0 +1,11 @@
+E:\API\UserM\bin\Debug\UserM.dll.config
+E:\API\UserM\bin\Debug\UserM.dll
+E:\API\UserM\bin\Debug\UserM.pdb
+E:\API\UserM\bin\Debug\EntityFramework.dll
+E:\API\UserM\bin\Debug\EntityFramework.SqlServer.dll
+E:\API\UserM\bin\Debug\EntityFramework.xml
+E:\API\UserM\bin\Debug\EntityFramework.SqlServer.xml
+E:\API\UserM\obj\Debug\UserM.csprojResolveAssemblyReference.cache
+E:\API\UserM\obj\Debug\UserM.csproj.CoreCompileInputs.cache
+E:\API\UserM\obj\Debug\UserM.dll
+E:\API\UserM\obj\Debug\UserM.pdb

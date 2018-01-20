@@ -1,0 +1,10 @@
+c:\Users\manoranga\documents\visual studio 2015\Projects\API\userDataAccess\bin\Debug\userDataAccess.dll.config
+c:\Users\manoranga\documents\visual studio 2015\Projects\API\userDataAccess\bin\Debug\userDataAccess.dll
+c:\Users\manoranga\documents\visual studio 2015\Projects\API\userDataAccess\bin\Debug\userDataAccess.pdb
+c:\Users\manoranga\documents\visual studio 2015\Projects\API\userDataAccess\bin\Debug\EntityFramework.dll
+c:\Users\manoranga\documents\visual studio 2015\Projects\API\userDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\manoranga\documents\visual studio 2015\Projects\API\userDataAccess\bin\Debug\EntityFramework.xml
+c:\Users\manoranga\documents\visual studio 2015\Projects\API\userDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\manoranga\documents\visual studio 2015\Projects\API\userDataAccess\obj\Debug\userDataAccess.csprojResolveAssemblyReference.cache
+c:\Users\manoranga\documents\visual studio 2015\Projects\API\userDataAccess\obj\Debug\userDataAccess.dll
+c:\Users\manoranga\documents\visual studio 2015\Projects\API\userDataAccess\obj\Debug\userDataAccess.pdb

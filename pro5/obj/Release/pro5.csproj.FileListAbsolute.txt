@@ -1,0 +1,6 @@
+E:\API\pro5\bin\Release\pro5.dll
+E:\API\pro5\bin\Release\pro5.pdb
+E:\API\pro5\obj\Release\pro5.csprojResolveAssemblyReference.cache
+E:\API\pro5\obj\Release\pro5.csproj.CoreCompileInputs.cache
+E:\API\pro5\obj\Release\pro5.dll
+E:\API\pro5\obj\Release\pro5.pdb

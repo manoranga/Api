@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-API-20171124091441.mdf;Initial Catalog=aspnet-API-20171124091441;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\API\\API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="UsersEntities-Web.config Connection String" description="UsersEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/UserdataModel.csdl|res://*/UserdataModel.ssdl|res://*/UserdataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=localhost;initial catalog=Users;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\API\\API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='UsersEntities']/@connectionString" />
+  </parameter>
+  <parameter name="thanujaEntities-Web.config Connection String" description="thanujaEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=thanuja.database.windows.net;initial catalog=thanuja;persist security info=True;user id=prabodha;password=Manoranga13308;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\API\\API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='thanujaEntities']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="thanujaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CabBooking">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="BookingId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentId" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BeginigLocation" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="EndLocation" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TouristId" Type="Int32" Nullable="false" />
+    <Property Name="CabId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CabDetail">
+    <Key>
+      <PropertyRef Name="CabServiceId" />
+      <PropertyRef Name="CabId" />
+    </Key>
+    <Property Name="CabServiceId" Type="Int32" Nullable="false" />
+    <Property Name="CabId" Type="Int32" Nullable="false" />
+    <Property Name="CurrentLocation" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CabRating">
+    <Key>
+      <PropertyRef Name="TouristId" />
+      <PropertyRef Name="CabId" />
+    </Key>
+    <Property Name="TouristId" Type="Int32" Nullable="false" />
+    <Property Name="CabId" Type="Int32" Nullable="false" />
+    <Property Name="RatingValue" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CabService">
+    <Key>
+      <PropertyRef Name="CabServiceId" />
+    </Key>
+    <Property Name="CabServiceId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Chat">
+    <Key>
+      <PropertyRef Name="ChatId" />
+    </Key>
+    <Property Name="ChatId" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChatGroup">
+    <Key>
+      <PropertyRef Name="ChatGroupId" />
+    </Key>
+    <Property Name="ChatGroupId" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="ChatGrouping">
+    <Key>
+      <PropertyRef Name="ChatMemberId" />
+      <PropertyRef Name="ChatGroupId" />
+    </Key>
+    <Property Name="ChatMemberId" Type="Int32" Nullable="false" />
+    <Property Name="ChatGroupId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChatMember">
+    <Key>
+      <PropertyRef Name="ChatMemberId" />
+    </Key>
+    <Property Name="ChatMemberId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="HotelId" />
+    </Key>
+    <Property Name="HotelId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Rank" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RoomTypes" Relationship="Self.FK_RoomType_Hotel" FromRole="Hotel" ToRole="RoomType" />
+  </EntityType>
+  <EntityType Name="HotelRating">
+    <Key>
+      <PropertyRef Name="TouristId" />
+      <PropertyRef Name="HotelId" />
+    </Key>
+    <Property Name="TouristId" Type="Int32" Nullable="false" />
+    <Property Name="HotelId" Type="Int32" Nullable="false" />
+    <Property Name="RatingValue" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="Int32" Nullable="false" />
+    <Property Name="TouristId" Type="Int32" Nullable="false" />
+    <Property Name="TotalAmount" Type="Int32" Nullable="false" />
+    <Property Name="Commision" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Tourist" Relationship="Self.FK_Payments_Tourist" FromRole="Payments" ToRole="Tourist" />
+    <NavigationProperty Name="RoomBookings" Relationship="Self.FK_RoomBooking_Payments" FromRole="Payments" ToRole="RoomBooking" />
+    <NavigationProperty Name="TourGuideBookings" Relationship="Self.FK_TourGuideBooking_Payments" FromRole="Payments" ToRole="TourGuideBooking" />
+  </EntityType>
+  <EntityType Name="ReviewType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="ReviewType1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TypeId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="RoomId" />
+      <PropertyRef Name="HotelId" />
+    </Key>
+    <Property Name="RoomId" Type="Int32" Nullable="false" />
+    <Property Name="HotelId" Type="Int32" Nullable="false" />
+    <Property Name="RoomStatus" Type="Boolean" Nullable="false" />
+    <Property Name="FloorNo" Type="Int32" Nullable="false" />
+    <Property Name="ReservationId" Type="Int32" Nullable="false" />
+    <Property Name="BookingId" Type="Int32" Nullable="false" />
+    <Property Name="RoomTypeId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoomBooking">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="BookingId" Type="Int32" Nullable="false" />
+    <Property Name="RoomId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentId" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NoOfRooms" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Payment" Relationship="Self.FK_RoomBooking_Payments" FromRole="RoomBooking" ToRole="Payments" />
+    <NavigationProperty Name="RoomBooking1" Relationship="Self.FK_RoomBooking_RoomBooking" FromRole="RoomBooking" ToRole="RoomBooking1" />
+    <NavigationProperty Name="RoomBooking2" Relationship="Self.FK_RoomBooking_RoomBooking" FromRole="RoomBooking1" ToRole="RoomBooking" />
+  </EntityType>
+  <EntityType Name="RoomDetail">
+    <Key>
+      <PropertyRef Name="HotelId" />
+      <PropertyRef Name="RoomTypeId" />
+    </Key>
+    <Property Name="HotelId" Type="Int32" Nullable="false" />
+    <Property Name="RoomTypeId" Type="Int32" Nullable="false" />
+    <Property Name="Availability" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoomType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="HotelId" Type="Int32" Nullable="false" />
+    <Property Name="TypeId" Type="Int32" Nullable="false" />
+    <Property Name="TypeName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="RoomCharge" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Hotel" Relationship="Self.FK_RoomType_Hotel" FromRole="RoomType" ToRole="Hotel" />
+  </EntityType>
+  <EntityType Name="TourGuide">
+    <Key>
+      <PropertyRef Name="GuideId" />
+    </Key>
+    <Property Name="GuideId" Type="Int32" Nullable="false" />
+    <Property Name="LoginDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UserName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Nationality" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ChatStatus" Type="Boolean" Nullable="false" />
+    <Property Name="Rank" Type="Int32" Nullable="false" />
+    <Property Name="ChargePerDay" Type="Int32" Nullable="false" />
+    <Property Name="BookingId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TourGuide1" Relationship="Self.FK_TourGuide_TourGuide" FromRole="TourGuide" ToRole="TourGuide1" />
+    <NavigationProperty Name="TourGuide2" Relationship="Self.FK_TourGuide_TourGuide" FromRole="TourGuide1" ToRole="TourGuide" />
+  </EntityType>
+  <EntityType Name="TourGuideBooking">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="BookingId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentId" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NoOfDays" Type="Int32" Nullable="false" />
+    <Property Name="TouristId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Payment" Relationship="Self.FK_TourGuideBooking_Payments" FromRole="TourGuideBooking" ToRole="Payments" />
+    <NavigationProperty Name="Tourist" Relationship="Self.FK_TourGuideBooking_Tourist" FromRole="TourGuideBooking" ToRole="Tourist" />
+  </EntityType>
+  <EntityType Name="TourGuideRating">
+    <Key>
+      <PropertyRef Name="TouristId" />
+      <PropertyRef Name="TourGuideId" />
+    </Key>
+    <Property Name="TouristId" Type="Int32" Nullable="false" />
+    <Property Name="TourGuideId" Type="Int32" Nullable="false" />
+    <Property Name="RatingValue" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tourist">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="LoginDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UserName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Nationality" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ChatStatus" Type="Boolean" Nullable="false" />
+    <Property Name="TouristId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Payments" Relationship="Self.FK_Payments_Tourist" FromRole="Tourist" ToRole="Payments" />
+    <NavigationProperty Name="TourGuideBookings" Relationship="Self.FK_TourGuideBooking_Tourist" FromRole="Tourist" ToRole="TourGuideBooking" />
+  </EntityType>
+  <EntityType Name="BookedBy">
+    <Key>
+      <PropertyRef Name="TouristId" />
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="TouristId" Type="Int32" Nullable="false" />
+    <Property Name="BookingId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChatWhoToWhom">
+    <Key>
+      <PropertyRef Name="SenderId" />
+      <PropertyRef Name="ReceiverId" />
+    </Key>
+    <Property Name="SenderId" Type="Int32" Nullable="false" />
+    <Property Name="ReceiverId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reservation">
+    <Key>
+      <PropertyRef Name="ReservationId" />
+      <PropertyRef Name="RoomId" />
+      <PropertyRef Name="HotelId" />
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="ReservationId" Type="Int32" Nullable="false" />
+    <Property Name="RoomId" Type="Int32" Nullable="false" />
+    <Property Name="HotelId" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TouristId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="ReviewId" />
+      <PropertyRef Name="PaymentId" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="ReviewId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentId" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_RoomType_Hotel">
+    <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
+    <End Role="RoomType" Type="Self.RoomType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotel">
+        <PropertyRef Name="HotelId" />
+      </Principal>
+      <Dependent Role="RoomType">
+        <PropertyRef Name="HotelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payments_Tourist">
+    <End Role="Tourist" Type="Self.Tourist" Multiplicity="1" />
+    <End Role="Payments" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tourist">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Payments">
+        <PropertyRef Name="TouristId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomBooking_Payments">
+    <End Role="Payments" Type="Self.Payment" Multiplicity="1" />
+    <End Role="RoomBooking" Type="Self.RoomBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payments">
+        <PropertyRef Name="PaymentId" />
+      </Principal>
+      <Dependent Role="RoomBooking">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TourGuideBooking_Payments">
+    <End Role="Payments" Type="Self.Payment" Multiplicity="1" />
+    <End Role="TourGuideBooking" Type="Self.TourGuideBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payments">
+        <PropertyRef Name="PaymentId" />
+      </Principal>
+      <Dependent Role="TourGuideBooking">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomBooking_RoomBooking">
+    <End Role="RoomBooking" Type="Self.RoomBooking" Multiplicity="1" />
+    <End Role="RoomBooking1" Type="Self.RoomBooking" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RoomBooking">
+        <PropertyRef Name="BookingId" />
+      </Principal>
+      <Dependent Role="RoomBooking1">
+        <PropertyRef Name="BookingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TourGuide_TourGuide">
+    <End Role="TourGuide" Type="Self.TourGuide" Multiplicity="1" />
+    <End Role="TourGuide1" Type="Self.TourGuide" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TourGuide">
+        <PropertyRef Name="GuideId" />
+      </Principal>
+      <Dependent Role="TourGuide1">
+        <PropertyRef Name="GuideId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TourGuideBooking_Tourist">
+    <End Role="Tourist" Type="Self.Tourist" Multiplicity="1" />
+    <End Role="TourGuideBooking" Type="Self.TourGuideBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tourist">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TourGuideBooking">
+        <PropertyRef Name="TouristId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="thanujaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CabBookings" EntityType="Self.CabBooking" />
+    <EntitySet Name="CabDetails" EntityType="Self.CabDetail" />
+    <EntitySet Name="CabRatings" EntityType="Self.CabRating" />
+    <EntitySet Name="CabServices" EntityType="Self.CabService" />
+    <EntitySet Name="Chats" EntityType="Self.Chat" />
+    <EntitySet Name="ChatGroups" EntityType="Self.ChatGroup" />
+    <EntitySet Name="ChatGroupings" EntityType="Self.ChatGrouping" />
+    <EntitySet Name="ChatMembers" EntityType="Self.ChatMember" />
+    <EntitySet Name="Hotels" EntityType="Self.Hotel" />
+    <EntitySet Name="HotelRatings" EntityType="Self.HotelRating" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="ReviewTypes" EntityType="Self.ReviewType" />
+    <EntitySet Name="Rooms" EntityType="Self.Room" />
+    <EntitySet Name="RoomBookings" EntityType="Self.RoomBooking" />
+    <EntitySet Name="RoomDetails" EntityType="Self.RoomDetail" />
+    <EntitySet Name="RoomTypes" EntityType="Self.RoomType" />
+    <EntitySet Name="TourGuides" EntityType="Self.TourGuide" />
+    <EntitySet Name="TourGuideBookings" EntityType="Self.TourGuideBooking" />
+    <EntitySet Name="TourGuideRatings" EntityType="Self.TourGuideRating" />
+    <EntitySet Name="Tourists" EntityType="Self.Tourist" />
+    <EntitySet Name="BookedBies" EntityType="Self.BookedBy" />
+    <EntitySet Name="ChatWhoToWhoms" EntityType="Self.ChatWhoToWhom" />
+    <EntitySet Name="Reservations" EntityType="Self.Reservation" />
+    <EntitySet Name="Reviews" EntityType="Self.Review" />
+    <AssociationSet Name="FK_RoomType_Hotel" Association="Self.FK_RoomType_Hotel">
+      <End Role="Hotel" EntitySet="Hotels" />
+      <End Role="RoomType" EntitySet="RoomTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payments_Tourist" Association="Self.FK_Payments_Tourist">
+      <End Role="Tourist" EntitySet="Tourists" />
+      <End Role="Payments" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomBooking_Payments" Association="Self.FK_RoomBooking_Payments">
+      <End Role="Payments" EntitySet="Payments" />
+      <End Role="RoomBooking" EntitySet="RoomBookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TourGuideBooking_Payments" Association="Self.FK_TourGuideBooking_Payments">
+      <End Role="Payments" EntitySet="Payments" />
+      <End Role="TourGuideBooking" EntitySet="TourGuideBookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomBooking_RoomBooking" Association="Self.FK_RoomBooking_RoomBooking">
+      <End Role="RoomBooking" EntitySet="RoomBookings" />
+      <End Role="RoomBooking1" EntitySet="RoomBookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TourGuide_TourGuide" Association="Self.FK_TourGuide_TourGuide">
+      <End Role="TourGuide" EntitySet="TourGuides" />
+      <End Role="TourGuide1" EntitySet="TourGuides" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TourGuideBooking_Tourist" Association="Self.FK_TourGuideBooking_Tourist">
+      <End Role="Tourist" EntitySet="Tourists" />
+      <End Role="TourGuideBooking" EntitySet="TourGuideBookings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

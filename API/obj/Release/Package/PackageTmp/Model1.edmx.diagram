@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aa5951cb153a4918b91967a2a326c4ad" Name="Diagram1" ZoomLevel="18">
+        <EntityTypeShape EntityType="thanujaModel.BookedBy" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.CabBooking" Width="1.5" PointX="5.25" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.CabDetail" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.CabRating" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.CabService" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.Chat" Width="1.5" PointX="3.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.ChatGroup" Width="1.5" PointX="8.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.ChatGrouping" Width="1.5" PointX="8.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.ChatMember" Width="1.5" PointX="10.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.ChatWhoToWhom" Width="1.5" PointX="6" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.Hotel" Width="1.5" PointX="3.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.HotelRating" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.Payment" Width="1.5" PointX="3" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.Reservation" Width="1.5" PointX="6" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.Room" Width="1.5" PointX="8.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.RoomBooking" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.RoomDetail" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.RoomType" Width="1.5" PointX="6" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.TourGuide" Width="1.5" PointX="3.75" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.TourGuideBooking" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.TourGuideRating" Width="1.5" PointX="10.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.Tourist" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="thanujaModel.Review" Width="1.5" PointX="10.75" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="thanujaModel.FK_BookedBy_CabBooking" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_BookedBy_RoomBooking" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_BookedBy_TourGuideBooking" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_BookedBy_Tourist" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_CabBooking_Payments" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_CabBooking_Tourist" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_CabRating_CabRating" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_CabRating_Tourist" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_ChatWhoToWhom_Chat" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_ChatWhoToWhom_TourGuide" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_ChatWhoToWhom_TourGuide1" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_ChatWhoToWhom_Tourist" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_ChatWhoToWhom_Tourist1" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_HotelRating_Hotel" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_Reservations_Hotel" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_Room_Hotel" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_RoomDetails_Hotel" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_RoomType_Hotel" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_HotelRating_Tourist" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_Payments_Tourist1" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_Reservations_Tourist" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_Room_Reservations" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_Room_RoomBooking" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_RoomBooking_RoomBooking" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_RoomDetails_RoomDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_TourGuide_TourGuide" ManuallyRouted="false" />
+        <AssociationConnector Association="thanujaModel.FK_TourGuideBooking_TourGuideBooking" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
