@@ -18,8 +18,8 @@ namespace API.Controllers
         {
             using (thanujaEntities entities = new thanujaEntities())
             {
-                var k= entities.Tourists.Where(e => e.UserName == "prabodha");
-                return k.ToList();
+                var all = entities.Tourists.Where(e => e.UserName == "prabodha");
+                return all;
             }
         }
 
@@ -32,8 +32,8 @@ namespace API.Controllers
             }
         }
         [HttpPost]
-        [Route("api/user/register")]
-        public string Register([FromBody] Tourist user)
+        [Route("api/user/register/tourist")]
+        public string RegisterTourist([FromBody] Tourist user)
          {
              using (thanujaEntities entities = new thanujaEntities())
              {
@@ -53,7 +53,7 @@ namespace API.Controllers
         {
             using (thanujaEntities db = new thanujaEntities())
             {
-                //var username = db.users.SingleOrDefault(u => u.username == user.username && u.password == user.password);
+                
                 var login = db.Tourists.Where(u => u.UserName == user.UserName).FirstOrDefault();
                 if (login.Password == user.Password)
                 {

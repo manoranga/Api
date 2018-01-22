@@ -18,7 +18,6 @@ namespace API
         public thanujaEntities()
             : base("name=thanujaEntities")
         {
-            this.Configuration.ProxyCreationEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
